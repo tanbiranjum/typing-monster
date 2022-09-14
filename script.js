@@ -43,9 +43,13 @@ const typeController = (e) => {
   const newLetterCorrect = validate(newLetter);
 
   if (newLetterCorrect) {
-    display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
+    display.innerHTML += `<span class="green">${
+      newLetter === " " ? "▪" : newLetter
+    }</span>`;
   } else {
-    display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    display.innerHTML += `<span class="red">${
+      newLetter === " " ? "▪" : newLetter
+    }</span>`;
   }
 
   // check if given question text is equal to user typed text
@@ -58,6 +62,7 @@ const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
   }
+  errorCount += 1;
   return false;
 };
 
@@ -134,6 +139,7 @@ setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = Math.floor((currentTime - startTime) / 1000);
 
-
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${
+    startTime ? timeSpent : 0
+  } seconds`;
 }, 1000);
