@@ -145,15 +145,16 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  flex-direction: row;
 }
 
 .card {
-  width: 100%;
+  flex: 0 1 32%;
   height: 100%;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 20px 30px;
   color: white;
   border-radius: 15px;
@@ -165,6 +166,10 @@ button {
   );
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
+}
+
+.card > :first-child {
+  margin-bottom: 10px;
 }
 
 #modal-background {
@@ -187,6 +192,12 @@ button {
     width: 100%;
   }
   .card {
-    flex-direction: column;
+    flex-direction: row;
+    flex: 0 0 100%;
+    align-items: center;
+  }
+
+  .card > :first-child {
+    margin-bottom: 0;
   }
 }
