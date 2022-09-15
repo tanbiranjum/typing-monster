@@ -82,11 +82,13 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
+  const speed = Math.trunc((questionText.split(" ").length / timeTaken) * 60);
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+    <p>Your typing speed is ${speed}WPM</p>
     <button onclick="closeModal()">Close</button>
   `;
 
